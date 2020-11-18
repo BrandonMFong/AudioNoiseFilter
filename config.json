@@ -6,11 +6,27 @@
             {
                 "Part1":
                 {
-                    "Res": 10000,
-                    "Cap":"2.5*(10^(-9))",
-                    "wmin":1000,
-                    "wmax":1000000,
-                    "winc":100
+                    "min": 0,
+                    "max": 7,
+                    "array": "[0 1 1 1 1 1 0 0]",
+                    "Plot1":{
+                        "Title":"Original",
+                        "xaxisName":"n",
+                        "yaxisName":"x_1[n]",
+                        "axisRanges":"[0 7 0 1.5]"
+                    },
+                    "Plot2":{
+                        "Title":"DFT Magnitude",
+                        "xaxisName":"k",
+                        "yaxisName":"|X_1[k]|",
+                        "yaxisLimit":"[0 6]"
+                    },
+                    "Plot3":{
+                        "Title":"Original",
+                        "xaxisName":"n",
+                        "yaxisName":"x_1[n]",
+                        "axisRanges":"[0 7 0 1.5]"
+                    }
                 },
                 "Part2":{}
             }
@@ -18,7 +34,7 @@
     ],
     "Paths": [
         { "Path": "./src" },
-        {"Path":"./src/Part1"}   
+        {"Path":"./src/Part1"}
     ],
     "Save": [
         {
