@@ -18,9 +18,7 @@
     ],
     "Paths": [
         { "Path": "./src" },
-        {"Path":"./res"}    ,
-        {"Path":"./src/AMRadioDemod"} ,
-        {"Path":"./src/Part2Pre"}    
+        {"Path":"./src/Part1"}   
     ],
     "Save": [
         {
