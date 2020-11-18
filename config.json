@@ -1,0 +1,39 @@
+{
+    "Constants": 
+    [
+        {
+            "Constant":
+            {
+                "Part1":
+                {
+                    "Res": 10000,
+                    "Cap":"2.5*(10^(-9))",
+                    "wmin":1000,
+                    "wmax":1000000,
+                    "winc":100
+                },
+                "Part2":{}
+            }
+        }
+    ],
+    "Paths": [
+        { "Path": "./src" },
+        {"Path":"./res"}    ,
+        {"Path":"./src/AMRadioDemod"} ,
+        {"Path":"./src/Part2Pre"}    
+    ],
+    "Save": [
+        {
+            "Type":"WaveFile",
+            "Filename":"Channel1.wav",
+            "SamplingFrequency":"8000",
+            "MatlabVariable":"real(FilteredCh1(1:8:end))"
+        },
+        {
+            "Type":"WaveFile",
+            "Filename":"Channel2.wav",
+            "SamplingFrequency":"8000",
+            "MatlabVariable":"real(FilteredCh2(1:8:end))"
+        }
+    ]
+}
