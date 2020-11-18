@@ -37,3 +37,21 @@ stem(Matlab_idx,X1kmag); ylim(eval(const.Part1.Plot4.yaxisLimit));
 title(const.Part1.Plot4.Title);
 xlabel(const.Part1.Plot4.xaxisName);
 ylabel(const.Part1.Plot4.yaxisName);
+
+% plot DFT mag as a function of discrete freq
+% radians per sample
+w = [eval(const.Part1.Plot5.min):eval(const.Part1.Plot5.inc):eval(const.Part1.Plot5.max)];
+figure(5);
+stem(w,X1kmag);ylim(eval(const.Part1.Plot5.yaxisLimit));
+title(const.Part1.Plot5.Title); ylim(eval(const.Part1.Plot5.yaxisLimit));
+xlabel(const.Part1.Plot5.xaxisName);
+ylabel(const.Part1.Plot5.yaxisName);
+
+% Compute and plot the IDFT
+x2n = ifft(X1k);
+figure(6);
+stem(n,x2n);
+axis(eval(const.Part1.Plot6.axisRanges));
+title(const.Part1.Plot6.Title);
+xlabel(const.Part1.Plot6.xaxisName);
+ylabel(const.Part1.Plot6.yaxisName);

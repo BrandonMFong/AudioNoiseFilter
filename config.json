@@ -33,6 +33,21 @@
                         "yaxisLimit":"[0 6]",
                         "min":1,
                         "max":8
+                    },
+                    "Plot5":{
+                        "Title":"DFT Magnitude in discrete frequency",
+                        "xaxisName":"discrete radian frequency \\omega",
+                        "yaxisName":"|X_1[\\omega|",
+                        "yaxisLimit":"[0 6]",
+                        "min":"0",
+                        "max":"7*2*pi/8",
+                        "inc":"2*pi/8"
+                    },
+                    "Plot6":{
+                        "Title":"IDFT",
+                        "xaxisName":"n",
+                        "yaxisName":"IDFT",
+                        "axisRanges":"[0 7 0 1.5]"
                     }
                 },
                 "Part2":{}
