@@ -22,10 +22,17 @@
                         "yaxisLimit":"[0 6]"
                     },
                     "Plot3":{
-                        "Title":"Original",
-                        "xaxisName":"n",
-                        "yaxisName":"x_1[n]",
-                        "axisRanges":"[0 7 0 1.5]"
+                        "Title":"DFT Phase",
+                        "xaxisName":"k",
+                        "yaxisName":"arg(X_1[k])"
+                    },
+                    "Plot4":{
+                        "Title":"DFT Magnitude in Matlab index",
+                        "xaxisName":"Matlab index",
+                        "yaxisName":"|X_1[Matlab index]",
+                        "yaxisLimit":"[0 6]",
+                        "min":1,
+                        "max":8
                     }
                 },
                 "Part2":{}

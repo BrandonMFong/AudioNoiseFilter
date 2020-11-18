@@ -26,6 +26,14 @@ ylabel(const.Part1.Plot2.yaxisName);
 
 figure(3);
 stem(k,X1karg);
-title('DFT Phase');
-xlabel('k');
-ylabel('arg(X_1[k]');
+title(const.Part1.Plot3.Title);
+xlabel(const.Part1.Plot3.xaxisName);
+ylabel(const.Part1.Plot3.yaxisName);
+
+% DFT mag as function of Matlab index
+Matlab_idx = [const.Part1.Plot4.min:const.Part1.Plot4.max];
+figure(4);
+stem(Matlab_idx,X1kmag); ylim(eval(const.Part1.Plot4.yaxisLimit));
+title(const.Part1.Plot4.Title);
+xlabel(const.Part1.Plot4.xaxisName);
+ylabel(const.Part1.Plot4.yaxisName);
