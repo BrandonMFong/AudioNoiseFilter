@@ -97,3 +97,16 @@ stem(w,X1karg_centered);
 title('Centered Angle (with stem)');
 xlabel('w');
 ylabel('Centered Angle');
+
+
+% Step 4
+
+% Using 1000 points for the frequency vector plot 
+w = linspace(-pi,pi,1000);
+
+% The DTFT computation 
+X1hat = sin(2.5*w)./sin(w/2) .* exp(-3*j*w);
+X1hatmag = abs(X1hat);
+X1hatarg = angle(X1hat);
+
+
