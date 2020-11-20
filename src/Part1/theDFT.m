@@ -1,5 +1,6 @@
 % Part 1
 
+% Step 1
 % Init variables with .json config
 n = const.Part1.min:const.Part1.max;
 x1n = eval(const.Part1.array);
@@ -55,3 +56,27 @@ axis(eval(const.Part1.Plot6.axisRanges));
 title(const.Part1.Plot6.Title);
 xlabel(const.Part1.Plot6.xaxisName);
 ylabel(const.Part1.Plot6.yaxisName);
+
+% Step 2
+% Centering the DFT
+X1kshift = fftshift(fft(x1n));
+X1kmag_centered = abs(X1kshift);
+X1karg_centered = angle(X1kshift);
+x2n = ifft(ifftshift(X1kshift));
+
+% Plot the centered magnitude and phase as function of the radian frequency 
+
+% Mag
+w = [-4*2*pi/8:2*pi/8:3*2*pi/8];
+figure(7);
+stem(w,X1kmag_centered);
+title('Centered');
+xlabel('w');
+ylabel('Centered Mag');
+
+% Phase 
+figure(8);
+stem(w,X1karg_centered);
+title('Centered Angle');
+xlabel('w');
+ylabel('Centered Angle');
