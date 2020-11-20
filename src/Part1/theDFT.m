@@ -69,14 +69,31 @@ x2n = ifft(ifftshift(X1kshift));
 % Mag
 w = [-4*2*pi/8:2*pi/8:3*2*pi/8];
 figure(7);
-stem(w,X1kmag_centered);
-title('Centered');
+plot(w,X1kmag_centered);
+title('Centered Magnitude (with plot)');
 xlabel('w');
 ylabel('Centered Mag');
 
 % Phase 
 figure(8);
+plot(w,X1karg_centered);
+title('Centered Angle (with plot)');
+xlabel('w');
+ylabel('Centered Angle');
+
+% Step 3 
+
+% Mag
+w = [-4*2*pi/8:2*pi/8:3*2*pi/8];
+figure(9);
+stem(w,X1kmag_centered);
+title('Centered Magnitude (with stem)');
+xlabel('w');
+ylabel('Centered Mag');
+
+% Phase 
+figure(10);
 stem(w,X1karg_centered);
-title('Centered Angle');
+title('Centered Angle (with stem)');
 xlabel('w');
 ylabel('Centered Angle');
