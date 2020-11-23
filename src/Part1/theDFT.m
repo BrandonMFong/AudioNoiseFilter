@@ -110,8 +110,8 @@ X1hatmag = abs(X1hat);
 X1hatarg = angle(X1hat);
 
 % Computing the 8 point DFT
-x1n = [0 1 1 1 1 1 0 0];
-k = -4:3;
+x1n = [0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0]; % Modified to N=16
+k = -8:7; % length is 16 now
 X1k = fftshift(fft(x1n));
 X1kmag = abs(X1k);
 X1karg = angle(X1k);
