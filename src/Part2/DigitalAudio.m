@@ -63,19 +63,22 @@ N = Fs * 4;
 n = 0:N-1;
 
 % 250 Hz
-f_analog = 250;
+f_analog = 1000;
 w_dig = 2*pi*f_analog/Fs;
 x1 = cos(w_dig * n);
 sound(x1,Fs,16);
 pause(5);
 
 % sweeping 1kHz to 3kHz
-f_start_analog = 1000;
-w_start_dig = 2*pi*f_start_analog/Fs;
-f_stop_analog = 3000;
-w_stop_dig = 2*pi*f_stop_analog/Fs;
-phi = (w_stop_dig - w_start_dig)/(2*(N-1))*(n.*n) + w_start_dig*n;
-x2 = cos(phi);
+% f_start_analog = 1000;
+% w_start_dig = 2*pi*f_start_analog/Fs;
+% f_stop_analog = 3000;
+% w_stop_dig = 2*pi*f_stop_analog/Fs;
+% phi = (w_stop_dig - w_start_dig)/(2*(N-1))*(n.*n) + w_start_dig*n;
+% x2 = cos(phi);
+f_analog = 3000; % changing to 3000 hertz
+w_dig = 2*pi*f_analog/Fs;
+x2 = cos(w_dig * n);
 sound(x2,Fs,16);
 pause(5);
 
@@ -86,8 +89,9 @@ sound(x3,Fs,16);
 pause(5);
 
 % Lowpass Use
-Wp = w_dig/pi;
-Ws = w_start_dig/pi;
+% Will just not include the pi in the equation
+Wp = 2*1000/Fs; 
+Ws = 2*3000/Fs;
 Rp = 1;
 Rs = 60;
 [Nf, Wn] = buttord(Wp,Ws,Rp,Rs);
@@ -101,18 +105,18 @@ y1 = y1 / max(abs(y1));
 sound(y1,Fs,16);
 pause(5);
 
-% Highpass use
-Ws = w_dig/pi;
-Wp = w_start_dig/pi;
-Rp = 1;
-Rs = 60;
-[Nf,Wn] = buttord(Wp,Ws,Rp,Rs);
-[num2,den2] = butter(Nf,Wn,'high');
-Hd = dfilt.df1(num2,den2);
-addfilter(h,Hd);
-figure(16);
-freqz(num2,den2,1024);
-title('Highpass Frequency Response');
-y2 = filter(num2,den2,x3);
-y2 = y2/max(abs(y2));
-sound(y2,Fs,16);
+% % Highpass use
+% Ws = w_dig/pi;
+% Wp = w_start_dig/pi;
+% Rp = 1;
+% Rs = 60;
+% [Nf,Wn] = buttord(Wp,Ws,Rp,Rs);
+% [num2,den2] = butter(Nf,Wn,'high');
+% Hd = dfilt.df1(num2,den2);
+% addfilter(h,Hd);
+% figure(16);
+% freqz(num2,den2,1024);
+% title('Highpass Frequency Response');
+% y2 = filter(num2,den2,x3);
+% y2 = y2/max(abs(y2));
+% sound(y2,Fs,16);
