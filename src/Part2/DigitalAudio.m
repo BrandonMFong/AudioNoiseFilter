@@ -41,21 +41,21 @@ audiowrite('res/AudioOut.wav',x,Fs);
 [x2,Fs] = audioread('AudioOut.wav');
 sound(x2,Fs,16);
 
-% Lowpass digital butterworth filter
-Wp = 0.4;
-Ws = 0.6;
-Rp = 1;
-Rs = 60;
-[Nf, Wn] = buttord(Wp,Ws,Rp,Rs);
-[num,den] = butter(Nf,Wn);
+% % Lowpass digital butterworth filter
+% Wp = 0.4;
+% Ws = 0.6;
+% Rp = 1;
+% Rs = 60;
+% [low_Nf, low_Wn] = buttord(Wp,Ws,Rp,Rs);
+% [low_num,low_den] = butter(low_Nf,low_Wn);
 
-% Highpass digital butterworth filter 
-Wp = 0.6;
-Ws = 0.4;
-Rp = 1;
-Rs = 60;
-[Nf,Wn] = buttord(Wp,Ws,Rp,Rs);
-[num,den] = butter(Nf,Wn,'high');
+% % Highpass digital butterworth filter 
+% Wp = 0.6;
+% Ws = 0.4;
+% Rp = 1;
+% Rs = 60;
+% [Nf,Wn] = buttord(Wp,Ws,Rp,Rs);
+% [num,den] = butter(Nf,Wn,'high');
 
 % Step 6
 Fs = 44100;
@@ -84,3 +84,35 @@ x3 = x1 + x2; % literally just on top of the other audio
 x3 = x3 / max(abs(x3));
 sound(x3,Fs,16);
 pause(5);
+
+% Lowpass Use
+Wp = w_dig/pi;
+Ws = w_start_dig/pi;
+Rp = 1;
+Rs = 60;
+[Nf, Wn] = buttord(Wp,Ws,Rp,Rs);
+[num,den] = butter(Nf,Wn);
+h = fvtool(num,den);
+figure(15);
+freqz(num,den,1024);
+title('Lowpass Frequency Response');
+y1 = filter(num,den,x3);
+y1 = y1 / max(abs(y1));
+sound(y1,Fs,16);
+pause(5);
+
+% Highpass use
+Ws = w_dig/pi;
+Wp = w_start_dig/pi;
+Rp = 1;
+Rs = 60;
+[Nf,Wn] = buttord(Wp,Ws,Rp,Rs);
+[num2,den2] = butter(Nf,Wn,'high');
+Hd = dfilt.df1(num2,den2);
+addfilter(h,Hd);
+figure(16);
+freqz(num2,den2,1024);
+title('Highpass Frequency Response');
+y2 = filter(num2,den2,x3);
+y2 = y2/max(abs(y2));
+sound(y2,Fs,16);
