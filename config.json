@@ -56,7 +56,9 @@
     ],
     "Paths": [
         { "Path": "./src" },
-        {"Path":"./src/Part1"}
+        {"Path":"./src/Part1"},
+        {"Path":"./src/Part2"},
+        {"Path":"./res"}
     ],
     "Save": [
         {
