@@ -63,15 +63,9 @@
     "Save": [
         {
             "Type":"WaveFile",
-            "Filename":"Channel1.wav",
-            "SamplingFrequency":"8000",
-            "MatlabVariable":"real(FilteredCh1(1:8:end))"
-        },
-        {
-            "Type":"WaveFile",
-            "Filename":"Channel2.wav",
-            "SamplingFrequency":"8000",
-            "MatlabVariable":"real(FilteredCh2(1:8:end))"
+            "Filename":"filteredsig.wav",
+            "SamplingFrequency":"11025",
+            "MatlabVariable":"yout"
         }
     ]
 }
