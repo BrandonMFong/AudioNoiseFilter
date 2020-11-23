@@ -120,10 +120,10 @@ plot(w,X1hatmag,'-b');
 axis([-pi pi 0 6]);
 hold on;
 
-plot(k*2*pi/8, X1kmag, 'ro');
+plot(k*2*pi/16, X1kmag, 'ro');
 hold off;
 
-title('Magnitude of DTFT and centered 8-pt DFT');
+title('Magnitude of DTFT and centered 16-pt DFT');
 xlabel('\omega','FontSize',14);
 ylabel('$|\widehat X_1(e^{j\omega})|$, $|X_1[\omega]|$','Interpreter', 'latex', 'FontSize',14);
 
@@ -133,9 +133,9 @@ figure(12);
 plot(w,X1hatarg,'-b');
 axis([-pi pi -4 5]);
 hold on;
-plot(k*2*pi/8, X1karg,'ro');
+plot(k*2*pi/16, X1karg,'ro');
 hold off;
-title('Phase of DTFT and centered 8-pt DFT');
+title('Phase of DTFT and centered 16-pt DFT');
 xlabel('\omega','FontSize',14);
 ylabel('$\arg\widehat X_1(e^{j\omega})$, $\arg X_1[\omega]$','Interpreter', 'latex', 'FontSize', 14);
 legend('DTFT','DFT');
