@@ -3,7 +3,8 @@
 Fs = 44100;
 N = Fs * 2;
 n = 0:N-1;
-f_analog = 440;
+% f_analog = 440;
+f_analog = 5000;
 w_dig = 2*pi*f_analog/Fs;
 x = cos(w_dig * n);
 
@@ -35,6 +36,6 @@ ylabel('dB');
 % wait
 pause(3);
 
-audiowrite('res/A-440.wav',x,Fs);
-[x2,Fs] = audioread('A-440.wav');
+audiowrite('res/AudioOut.wav',x,Fs);
+[x2,Fs] = audioread('AudioOut.wav');
 sound(x2,Fs,16);
