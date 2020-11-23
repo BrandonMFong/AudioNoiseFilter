@@ -109,4 +109,33 @@ X1hat = sin(2.5*w)./sin(w/2) .* exp(-3*j*w);
 X1hatmag = abs(X1hat);
 X1hatarg = angle(X1hat);
 
+% Computing the 8 point DFT
+x1n = [0 1 1 1 1 1 0 0];
+k = -4:3;
+X1k = fftshift(fft(x1n));
+X1kmag = abs(X1k);
+X1karg = angle(X1k);
+figure(11);
+plot(w,X1hatmag,'-b');
+axis([-pi pi 0 6]);
+hold on;
 
+plot(k*2*pi/8, X1kmag, 'ro');
+hold off;
+
+title('Magnitude of DTFT and centered 8-pt DFT');
+xlabel('\omega','FontSize',14);
+ylabel('$|\widehat X_1(e^{j\omega})|$, $|X_1[\omega]|$','Interpreter', 'latex', 'FontSize',14);
+
+legend('DTFT','DFT');
+
+figure(12);
+plot(w,X1hatarg,'-b');
+axis([-pi pi -4 5]);
+hold on;
+plot(k*2*pi/8, X1karg,'ro');
+hold off;
+title('Phase of DTFT and centered 8-pt DFT');
+xlabel('\omega','FontSize',14);
+ylabel('$\arg\widehat X_1(e^{j\omega})$, $\arg X_1[\omega]$','Interpreter', 'latex', 'FontSize', 14);
+legend('DTFT','DFT');
