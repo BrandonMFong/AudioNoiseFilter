@@ -74,6 +74,12 @@
                         "Title":"Centered Angle (with stem)",
                         "xaxisName":"w",
                         "yaxisName":"Centered Angle"
+                    },
+                    "Plot11":{
+                        "Title":"Magnitude of DTFT and centered 16-pt DFT"
+                    },
+                    "Plot12":{
+                        "Title":"Phase of DTFT and centered 16-pt DFT"
                     }
                 },
                 "Part2":{}

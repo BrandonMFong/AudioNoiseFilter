@@ -123,7 +123,7 @@ hold on;
 plot(k*2*pi/16, X1kmag, 'ro');
 hold off;
 
-title('Magnitude of DTFT and centered 16-pt DFT');
+title(const.Part1.Plot11.Title);
 xlabel('\omega','FontSize',14);
 ylabel('$|\widehat X_1(e^{j\omega})|$, $|X_1[\omega]|$','Interpreter', 'latex', 'FontSize',14);
 
@@ -135,7 +135,7 @@ axis([-pi pi -4 5]);
 hold on;
 plot(k*2*pi/16, X1karg,'ro');
 hold off;
-title('Phase of DTFT and centered 16-pt DFT');
+title(const.Part1.Plot12.Title);
 xlabel('\omega','FontSize',14);
 ylabel('$\arg\widehat X_1(e^{j\omega})$, $\arg X_1[\omega]$','Interpreter', 'latex', 'FontSize', 14);
 legend('DTFT','DFT');
