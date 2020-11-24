@@ -61,6 +61,14 @@
                         "Title":"Centered Angle (with plot)",
                         "xaxisName":"w",
                         "yaxisName":"Centered Angle"
+                    },
+                    "Plot9":{
+                        "Title":"Centered Angle (with plot)",
+                        "xaxisName":"w",
+                        "yaxisName":"Centered Angle",
+                        "min":"-4*2*pi/8",
+                        "max":"3*2*pi/8",
+                        "inc":"2*pi/8"
                     }
                 },
                 "Part2":{}

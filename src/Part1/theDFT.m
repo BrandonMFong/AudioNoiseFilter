@@ -84,12 +84,12 @@ ylabel(const.Part1.Plot8.yaxisName);
 % Step 3 
 
 % Mag
-w = [-4*2*pi/8:2*pi/8:3*2*pi/8];
+w = [eval(const.Part1.Plot9.min):eval(const.Part1.Plot9.inc):eval(const.Part1.Plot9.max)];
 figure(9);
 stem(w,X1kmag_centered);
-title('Centered Magnitude (with stem)');
-xlabel('w');
-ylabel('Centered Mag');
+title(const.Part1.Plot9.Title);
+xlabel(const.Part1.Plot9.xaxisName);
+ylabel(const.Part1.Plot9.yaxisName);
 
 % Phase 
 figure(10);
