@@ -82,6 +82,7 @@
                     "Step5":{
                         "SamplingFreq":44100,
                         "f_analog1":5000,
+                        "AudioFileName":"AudioOut.wav",
                         "Plot13":{
                             "Title":"Centered DFT Magnitude for 440 Hz Pure Tone",
                             "xaxisName":"analog frequency, Hz",
@@ -90,6 +91,26 @@
                             "max":"pi-2*pi/N",
                             "inc":"2*pi/N",
                             "xlim":"[-20000 20000]"
+                        },
+                        "Plot14":{
+                            "Title":"Centered DFT Magnitude for 440 Hz Pure Tone",
+                            "xaxisName":"radian digital frequency \\omega",
+                            "yaxisName":"dB",
+                            "xlim":"[-pi pi]"
+                        }
+                    },
+                    "Step6":{
+                        "SamplingFreq":44100,
+                        "f_analog1":1000,
+                        "f_analog2":3000,
+                        "PassbandRipple":1,
+                        "StopbandAttenuation":60,
+                        "AudioFileName":"AudioOut.wav",
+                        "Plot15":{
+                            "Title":"Lowpass Frequency Response",
+                            "xaxisName":"radian digital frequency \\omega",
+                            "yaxisName":"dB",
+                            "xlim":"[-pi pi]"
                         }
                     }
                 }

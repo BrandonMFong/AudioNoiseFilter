@@ -30,16 +30,16 @@ ylabel(const.Part2.Step5.Plot13.yaxisName);
 % normalized digital frequency
 figure(14);
 plot(w,XmagdB);
-xlim([-pi pi]);
-title('Centered DFT Magnitude for 440 Hz Pure Tone');
-xlabel('radian digital frequency \omega');
-ylabel('dB');
+xlim(eval(const.Part2.Step5.Plot14.xlim));
+title(const.Part2.Step5.Plot14.Title);
+xlabel(const.Part2.Step5.Plot14.xaxisName);
+ylabel(const.Part2.Step5.Plot14.yaxisName);
 
 % wait
 pause(3);
 
-audiowrite('res/AudioOut.wav',x,Fs);
-[x2,Fs] = audioread('AudioOut.wav');
+audiowrite(strcat('res\',const.Part2.Step5.AudioFileName),x,Fs);
+[x2,Fs] = audioread(const.Part2.Step5.AudioFileName);
 sound(x2,Fs,16);
 
 % % Lowpass digital butterworth filter
@@ -59,12 +59,12 @@ sound(x2,Fs,16);
 % [num,den] = butter(Nf,Wn,'high');
 
 % Step 6
-Fs = 44100;
+Fs = const.Part2.Step6.SamplingFreq;
 N = Fs * 4;
 n = 0:N-1;
 
 % 250 Hz
-f_analog = 1000;
+f_analog = const.Part2.Step6.f_analog1;
 w_dig = 2*pi*f_analog/Fs;
 x1 = cos(w_dig * n);
 sound(x1,Fs,16);
@@ -77,7 +77,7 @@ pause(5);
 % w_stop_dig = 2*pi*f_stop_analog/Fs;
 % phi = (w_stop_dig - w_start_dig)/(2*(N-1))*(n.*n) + w_start_dig*n;
 % x2 = cos(phi);
-f_analog = 3000; % changing to 3000 hertz
+f_analog = const.Part2.Step6.f_analog2; % changing to 3000 hertz
 w_dig = 2*pi*f_analog/Fs;
 x2 = cos(w_dig * n);
 sound(x2,Fs,16);
@@ -91,16 +91,16 @@ pause(5);
 
 % Lowpass Use
 % Will just not include the pi in the equation
-Wp = 2*1000/Fs; 
-Ws = 2*3000/Fs;
-Rp = 1;
-Rs = 60;
+Wp = 2*const.Part2.Step6.f_analog1/Fs; 
+Ws = 2*const.Part2.Step6.f_analog2/Fs;
+Rp = const.Part2.Step6.PassbandRipple;
+Rs = const.Part2.Step6.StopbandAttenuation;
 [Nf, Wn] = buttord(Wp,Ws,Rp,Rs);
 [num,den] = butter(Nf,Wn);
 h = fvtool(num,den);
 figure(15);
 freqz(num,den,1024);
-title('Lowpass Frequency Response');
+title(const.Part2.Step6.Plot15.Title);
 y1 = filter(num,den,x3);
 y1 = y1 / max(abs(y1));
 sound(y1,Fs,16);
