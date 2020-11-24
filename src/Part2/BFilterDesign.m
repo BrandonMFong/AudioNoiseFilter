@@ -1,7 +1,7 @@
 % Part 2
 
 % Get audio file
-[xin,Fs_Bfilter] = audioread('res/proj3_noisysig.wav');
+[xin,Fs_Bfilter] = audioread(strcat('res\',const.BwDes.Filename));
 % sound(xin,Fs,16);
 
 % Plot
@@ -14,13 +14,13 @@ n = (length(xin) - 1)/2;
 f = (-n:n)/n;
 figure(16);
 plot(f,XmagdB);
-ylabel('Mag (dB)');
+ylabel(const.BwDes.Plot16.yaxisname);
 
 % Design filter
-Wp = 0.4;
-Ws = 0.6; % TODO 
-Rp = 1;
-Rs = 60;
+Wp = const.BwDes.Filter.PassFreq;
+Ws = const.BwDes.Filter.StopFreq;  
+Rp = const.BwDes.Filter.PassbandRipple;
+Rs = const.BwDes.Filter.StopbandAttenuation;
 [Nf, Wn] = buttord(Wp,Ws,Rp,Rs);
 [num,den] = butter(Nf,Wn);
 figure(17);

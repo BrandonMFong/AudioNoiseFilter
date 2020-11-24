@@ -113,6 +113,19 @@
                             "xlim":"[-pi pi]"
                         }
                     }
+                },
+                "BwDes":{
+                    "Filename":"proj3_noisysig.wav",
+                    "Plot16":{
+                        "yaxisname":"Mag (dB)"
+                    },
+                    "Filter":{
+                        "PassFreq":0.4,
+                        "StopFreq":0.6,
+                        "PassbandRipple": 1,
+                        "StopbandAttenuation": 60
+
+                    }
                 }
             }
         }
