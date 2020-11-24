@@ -1,11 +1,7 @@
 {
-    "Constants": 
-    [
-        {
-            "Constant":
-            {
-                "Part1":
-                {
+    "Constants": [{
+            "Constant":{
+                "Part1":{
                     "min": 0,
                     "max": 7,
                     "array": "[0 1 1 1 1 1 0 0]",
@@ -82,7 +78,21 @@
                         "Title":"Phase of DTFT and centered 16-pt DFT"
                     }
                 },
-                "Part2":{}
+                "Part2":{
+                    "Step5":{
+                        "SamplingFreq":44100,
+                        "f_analog1":5000,
+                        "Plot13":{
+                            "Title":"Centered DFT Magnitude for 440 Hz Pure Tone",
+                            "xaxisName":"analog frequency, Hz",
+                            "yaxisName":"dB",
+                            "min":"-pi",
+                            "max":"pi-2*pi/N",
+                            "inc":"2*pi/N",
+                            "xlim":"[-20000 20000]"
+                        }
+                    }
+                }
             }
         }
     ],

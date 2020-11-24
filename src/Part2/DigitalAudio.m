@@ -1,11 +1,11 @@
 % Part 2
 
 % Step 5
-Fs = 44100;
+Fs = const.Part2.Step5.SamplingFreq;
 N = Fs * 2;
 n = 0:N-1;
 % f_analog = 440;
-f_analog = 5000;
+f_analog = const.Part2.Step5.f_analog1;
 w_dig = 2*pi*f_analog/Fs;
 x = cos(w_dig * n);
 
@@ -17,14 +17,15 @@ Xmag = abs(X);
 XmagdB = 20*log10(Xmag);
 
 % plot against radian digital frequency
-w = -pi:2*pi/N:pi-2*pi/N;
+% w = -pi:2*pi/N:pi-2*pi/N;
+w = eval(const.Part2.Step5.Plot13.min):eval(const.Part2.Step5.Plot13.inc):eval(const.Part2.Step5.Plot13.max);
 f = w * Fs / (2*pi);
 figure(13);
 plot(f,XmagdB);
-xlim([-20000 20000]);
-title('Centered DFT Magnitude for 440 Hz Pure Tone');
-xlabel('analog frequency, Hz');
-ylabel('dB');
+xlim(eval(const.Part2.Step5.Plot13.xlim));
+title(const.Part2.Step5.Plot13.Title);
+xlabel(const.Part2.Step5.Plot13.xaxisName);
+ylabel(const.Part2.Step5.Plot13.yaxisName);
 
 % normalized digital frequency
 figure(14);
