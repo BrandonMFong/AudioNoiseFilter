@@ -1,147 +1,144 @@
 {
     "Constants": [{
-            "Constant":{
-                "Part1":{
-                    "min": 0,
-                    "max": 7,
-                    "array": "[0 1 1 1 1 1 0 0]",
-                    "Plot1":{
-                        "Title":"Original",
-                        "xaxisName":"n",
-                        "yaxisName":"x_1[n]",
-                        "axisRanges":"[0 7 0 1.5]"
+        "Constant":{
+            "Part1":{
+                "min": 0,
+                "max": 7,
+                "array": "[0 1 1 1 1 1 0 0]",
+                "Plot1":{
+                    "Title":"Original",
+                    "xaxisName":"n",
+                    "yaxisName":"x_1[n]",
+                    "axisRanges":"[0 7 0 1.5]"
+                },
+                "Plot2":{
+                    "Title":"DFT Magnitude",
+                    "xaxisName":"k",
+                    "yaxisName":"|X_1[k]|",
+                    "yaxisLimit":"[0 6]"
+                },
+                "Plot3":{
+                    "Title":"DFT Phase",
+                    "xaxisName":"k",
+                    "yaxisName":"arg(X_1[k])"
+                },
+                "Plot4":{
+                    "Title":"DFT Magnitude in Matlab index",
+                    "xaxisName":"Matlab index",
+                    "yaxisName":"|X_1[Matlab index]",
+                    "yaxisLimit":"[0 6]",
+                    "min":1,
+                    "max":8
+                },
+                "Plot5":{
+                    "Title":"DFT Magnitude in discrete frequency",
+                    "xaxisName":"discrete radian frequency \\omega",
+                    "yaxisName":"|X_1[\\omega|",
+                    "yaxisLimit":"[0 6]",
+                    "min":"0",
+                    "max":"7*2*pi/8",
+                    "inc":"2*pi/8"
+                },
+                "Plot6":{
+                    "Title":"IDFT",
+                    "xaxisName":"n",
+                    "yaxisName":"IDFT",
+                    "axisRanges":"[0 7 0 1.5]"
+                },
+                "Plot7":{
+                    "Title":"Centered Magnitude (with plot)",
+                    "xaxisName":"w",
+                    "yaxisName":"Centered Mag",
+                    "min":"-4*2*pi/8",
+                    "max":"3*2*pi/8",
+                    "inc":"2*pi/8"
+                },
+                "Plot8":{
+                    "Title":"Centered Angle (with plot)",
+                    "xaxisName":"w",
+                    "yaxisName":"Centered Angle"
+                },
+                "Plot9":{
+                    "Title":"Centered Angle (with plot)",
+                    "xaxisName":"w",
+                    "yaxisName":"Centered Angle",
+                    "min":"-4*2*pi/8",
+                    "max":"3*2*pi/8",
+                    "inc":"2*pi/8"
+                },
+                "Plot10":{
+                    "Title":"Centered Angle (with stem)",
+                    "xaxisName":"w",
+                    "yaxisName":"Centered Angle"
+                },
+                "Plot11":{
+                    "Title":"Magnitude of DTFT and centered 16-pt DFT"
+                },
+                "Plot12":{
+                    "Title":"Phase of DTFT and centered 16-pt DFT"
+                }
+            },
+            "Part2":{
+                "Step5":{
+                    "SamplingFreq":44100,
+                    "f_analog1":5000,
+                    "AudioFileName":"AudioOut.wav",
+                    "Plot13":{
+                        "Title":"Centered DFT Magnitude for 440 Hz Pure Tone",
+                        "xaxisName":"analog frequency, Hz",
+                        "yaxisName":"dB",
+                        "min":"-pi",
+                        "max":"pi-2*pi/N",
+                        "inc":"2*pi/N",
+                        "xlim":"[-20000 20000]"
                     },
-                    "Plot2":{
-                        "Title":"DFT Magnitude",
-                        "xaxisName":"k",
-                        "yaxisName":"|X_1[k]|",
-                        "yaxisLimit":"[0 6]"
-                    },
-                    "Plot3":{
-                        "Title":"DFT Phase",
-                        "xaxisName":"k",
-                        "yaxisName":"arg(X_1[k])"
-                    },
-                    "Plot4":{
-                        "Title":"DFT Magnitude in Matlab index",
-                        "xaxisName":"Matlab index",
-                        "yaxisName":"|X_1[Matlab index]",
-                        "yaxisLimit":"[0 6]",
-                        "min":1,
-                        "max":8
-                    },
-                    "Plot5":{
-                        "Title":"DFT Magnitude in discrete frequency",
-                        "xaxisName":"discrete radian frequency \\omega",
-                        "yaxisName":"|X_1[\\omega|",
-                        "yaxisLimit":"[0 6]",
-                        "min":"0",
-                        "max":"7*2*pi/8",
-                        "inc":"2*pi/8"
-                    },
-                    "Plot6":{
-                        "Title":"IDFT",
-                        "xaxisName":"n",
-                        "yaxisName":"IDFT",
-                        "axisRanges":"[0 7 0 1.5]"
-                    },
-                    "Plot7":{
-                        "Title":"Centered Magnitude (with plot)",
-                        "xaxisName":"w",
-                        "yaxisName":"Centered Mag",
-                        "min":"-4*2*pi/8",
-                        "max":"3*2*pi/8",
-                        "inc":"2*pi/8"
-                    },
-                    "Plot8":{
-                        "Title":"Centered Angle (with plot)",
-                        "xaxisName":"w",
-                        "yaxisName":"Centered Angle"
-                    },
-                    "Plot9":{
-                        "Title":"Centered Angle (with plot)",
-                        "xaxisName":"w",
-                        "yaxisName":"Centered Angle",
-                        "min":"-4*2*pi/8",
-                        "max":"3*2*pi/8",
-                        "inc":"2*pi/8"
-                    },
-                    "Plot10":{
-                        "Title":"Centered Angle (with stem)",
-                        "xaxisName":"w",
-                        "yaxisName":"Centered Angle"
-                    },
-                    "Plot11":{
-                        "Title":"Magnitude of DTFT and centered 16-pt DFT"
-                    },
-                    "Plot12":{
-                        "Title":"Phase of DTFT and centered 16-pt DFT"
+                    "Plot14":{
+                        "Title":"Centered DFT Magnitude for 440 Hz Pure Tone",
+                        "xaxisName":"radian digital frequency \\omega",
+                        "yaxisName":"dB",
+                        "xlim":"[-pi pi]"
                     }
                 },
-                "Part2":{
-                    "Step5":{
-                        "SamplingFreq":44100,
-                        "f_analog1":5000,
-                        "AudioFileName":"AudioOut.wav",
-                        "Plot13":{
-                            "Title":"Centered DFT Magnitude for 440 Hz Pure Tone",
-                            "xaxisName":"analog frequency, Hz",
-                            "yaxisName":"dB",
-                            "min":"-pi",
-                            "max":"pi-2*pi/N",
-                            "inc":"2*pi/N",
-                            "xlim":"[-20000 20000]"
-                        },
-                        "Plot14":{
-                            "Title":"Centered DFT Magnitude for 440 Hz Pure Tone",
-                            "xaxisName":"radian digital frequency \\omega",
-                            "yaxisName":"dB",
-                            "xlim":"[-pi pi]"
-                        }
-                    },
-                    "Step6":{
-                        "SamplingFreq":44100,
-                        "f_analog1":1000,
-                        "f_analog2":3000,
-                        "PassbandRipple":1,
-                        "StopbandAttenuation":60,
-                        "AudioFileName":"AudioOut.wav",
-                        "Plot15":{
-                            "Title":"Lowpass Frequency Response",
-                            "xaxisName":"radian digital frequency \\omega",
-                            "yaxisName":"dB",
-                            "xlim":"[-pi pi]"
-                        }
+                "Step6":{
+                    "SamplingFreq":44100,
+                    "f_analog1":1000,
+                    "f_analog2":3000,
+                    "PassbandRipple":1,
+                    "StopbandAttenuation":60,
+                    "AudioFileName":"AudioOut.wav",
+                    "Plot15":{
+                        "Title":"Lowpass Frequency Response",
+                        "xaxisName":"radian digital frequency \\omega",
+                        "yaxisName":"dB",
+                        "xlim":"[-pi pi]"
                     }
+                }
+            },
+            "BwDes":{
+                "Filename":"proj3_noisysig.wav",
+                "Plot16":{
+                    "yaxisname":"Mag (dB)"
                 },
-                "BwDes":{
-                    "Filename":"proj3_noisysig.wav",
-                    "Plot16":{
-                        "yaxisname":"Mag (dB)"
-                    },
-                    "Filter":{
-                        "PassFreq":0.4,
-                        "StopFreq":0.6,
-                        "PassbandRipple": 1,
-                        "StopbandAttenuation": 60
+                "Filter":{
+                    "PassFreq":0.4,
+                    "StopFreq":0.6,
+                    "PassbandRipple": 1,
+                    "StopbandAttenuation": 60
 
-                    }
                 }
             }
         }
-    ],
+    }],
     "Paths": [
-        { "Path": "./src" },
+        {"Path": "./src" },
         {"Path":"./src/Part1"},
         {"Path":"./src/Part2"},
         {"Path":"./res"}
     ],
-    "Save": [
-        {
-            "Type":"WaveFile",
-            "Filename":"filteredsig.wav",
-            "SamplingFrequency":"11025",
-            "MatlabVariable":"yout"
-        }
-    ]
+    "Save": [{
+        "Type":"WaveFile",
+        "Filename":"filteredsig.wav",
+        "SamplingFrequency":"11025",
+        "MatlabVariable":"yout"
+    }]
 }
