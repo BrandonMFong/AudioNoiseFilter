@@ -94,9 +94,9 @@ ylabel(const.Part1.Plot9.yaxisName);
 % Phase 
 figure(10);
 stem(w,X1karg_centered);
-title('Centered Angle (with stem)');
-xlabel('w');
-ylabel('Centered Angle');
+title(const.Part1.Plot10.Title);
+xlabel(const.Part1.Plot10.xaxisName);
+ylabel(const.Part1.Plot10.yaxisName);
 
 
 % Step 4

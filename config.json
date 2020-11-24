@@ -69,6 +69,11 @@
                         "min":"-4*2*pi/8",
                         "max":"3*2*pi/8",
                         "inc":"2*pi/8"
+                    },
+                    "Plot10":{
+                        "Title":"Centered Angle (with stem)",
+                        "xaxisName":"w",
+                        "yaxisName":"Centered Angle"
                     }
                 },
                 "Part2":{}
