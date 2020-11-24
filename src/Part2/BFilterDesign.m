@@ -15,6 +15,7 @@ f = (-n:n)/n;
 figure(16);
 plot(f,XmagdB);
 ylabel(const.BwDes.Plot16.yaxisname);
+xlabel(const.BwDes.Plot16.xaxisname);
 
 % Design filter
 Wp = const.BwDes.Filter.PassFreq;

@@ -117,7 +117,8 @@
             "BwDes":{
                 "Filename":"proj3_noisysig.wav",
                 "Plot16":{
-                    "yaxisname":"Mag (dB)"
+                    "yaxisname":"Mag (dB)",
+                    "xaxisname":"Normalized Digital Frequncy"
                 },
                 "Filter":{
                     "PassFreq":0.4,
