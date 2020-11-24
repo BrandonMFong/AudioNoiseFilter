@@ -48,6 +48,14 @@
                         "xaxisName":"n",
                         "yaxisName":"IDFT",
                         "axisRanges":"[0 7 0 1.5]"
+                    },
+                    "Plot7":{
+                        "Title":"Centered Magnitude (with plot)",
+                        "xaxisName":"w",
+                        "yaxisName":"Centered Mag",
+                        "min":"-4*2*pi/8",
+                        "max":"3*2*pi/8",
+                        "inc":"2*pi/8"
                     }
                 },
                 "Part2":{}

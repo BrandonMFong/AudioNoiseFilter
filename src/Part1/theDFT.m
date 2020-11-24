@@ -67,12 +67,12 @@ x2n = ifft(ifftshift(X1kshift));
 % Plot the centered magnitude and phase as function of the radian frequency 
 
 % Mag
-w = [-4*2*pi/8:2*pi/8:3*2*pi/8];
+w = [eval(const.Part1.Plot7.min):eval(const.Part1.Plot7.inc):eval(const.Part1.Plot7.max)];
 figure(7);
 plot(w,X1kmag_centered);
-title('Centered Magnitude (with plot)');
-xlabel('w');
-ylabel('Centered Mag');
+title(const.Part1.Plot7.Title);
+xlabel(const.Part1.Plot7.xaxisName);
+ylabel(const.Part1.Plot7.yaxisName);
 
 % Phase 
 figure(8);
