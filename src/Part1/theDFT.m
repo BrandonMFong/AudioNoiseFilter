@@ -77,9 +77,9 @@ ylabel(const.Part1.Plot7.yaxisName);
 % Phase 
 figure(8);
 plot(w,X1karg_centered);
-title('Centered Angle (with plot)');
-xlabel('w');
-ylabel('Centered Angle');
+title(const.Part1.Plot8.Title);
+xlabel(const.Part1.Plot8.xaxisName);
+ylabel(const.Part1.Plot8.yaxisName);
 
 % Step 3 
 
